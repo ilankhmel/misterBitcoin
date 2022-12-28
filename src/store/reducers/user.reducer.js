@@ -18,6 +18,12 @@ import { userService } from "../../services/user.service"
                 ...state,
                 loggedInUser: {...action.user}
         }
+        case 'LOG_OUT':
+            console.log('gere');
+            return{
+                ...state,
+                loggedInUser: ''
+        }
     
         default:
            return state

@@ -12,6 +12,8 @@ import { loadContacts, setFilterBy } from '../store/actions/contact.actions'
 class _ContactPage extends Component {
 
     async componentDidMount(){
+        console.log(this.props.user);
+        if(!this.props.user) this.props.history.push('/')
         this.props.loadContacts()
     }
     
@@ -50,6 +52,7 @@ class _ContactPage extends Component {
 const mapStateToProps = state => ({
     contacts: state.contactModule.contacts,
     filterBy: state.contactModule.filterBy,
+    user: state.userModule.loggedInUser
 })
 
 const mapDispatchToProps = {

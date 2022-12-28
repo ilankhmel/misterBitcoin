@@ -3,7 +3,8 @@ export const contactService = {
     getContactById,
     deleteContact,
     saveContact,
-    getEmptyContact
+    getEmptyContact,
+    getNextId
 }
 
 const contacts = [
@@ -213,4 +214,11 @@ function _makeId(length = 10) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length))
     }
     return txt
+}
+
+async function getNextId(contactId){
+    const contacts = await getContacts()
+    let idx = contacts.findIndex(c => c._id === contactId)
+    if(idx + 1 < contacts.length) return contacts[idx + 1]._id
+    return false
 }

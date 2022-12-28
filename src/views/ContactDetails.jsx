@@ -12,6 +12,7 @@ class _ContactDetails extends Component {
 
     state = {
         contact: null,
+        nextId: null,
     }
 
     componentDidMount() {
@@ -28,7 +29,11 @@ class _ContactDetails extends Component {
 
     loadContact = async () => {
        const contact = await contactService.getContactById(this.props.match.params.id)
-       this.setState({contact})
+       this.setState({contact},()=>{
+        console.log(this.state.contact)
+        this.nextContactId()
+
+       })
     }
 
     loadUser = () => {
@@ -53,9 +58,17 @@ class _ContactDetails extends Component {
        
     }
 
+    nextContactId = async () => {
+        console.log(this.state.contact);
+        const id = await contactService.getNextId(this.state.contact._id)
+        console.log(id);
+        this.setState({nextId: id})
+        return id
+    }
+
     render() {
         const { user } = this.props
-        const { contact } = this.state
+        const { contact, nextId } = this.state
         if (!contact || !user) return <div>Loading...</div>
         return (
             <section className='contact-details'>
@@ -71,10 +84,12 @@ class _ContactDetails extends Component {
                     </div>
                 </section>
 
-                <TransferFund contact={contact} onTransferCoins={this.onTransferCoins} />
+                <TransferFund contact={contact} maxCoins={user.coins} onTransferCoins={this.onTransferCoins} />
                 <MovesList title="Your Moves:" movesList={this.movesWithContact} />
                 <button onClick={this.onBack}>Back</button>
-
+                {nextId &&
+                <button onClick={()=>this.props.history.push(`/contact/${nextId}`)}>Next contact</button>
+                }
             </section>
         )
     }

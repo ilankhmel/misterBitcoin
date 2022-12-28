@@ -8,4 +8,11 @@
         padding: 10px;
         border-radius: 50px;
     }
+
+    @media(max-width:750px){
+        input{
+            width: 140%;
+        }
+    }
+   
 }

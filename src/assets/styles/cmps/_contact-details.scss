@@ -19,4 +19,19 @@
     img{
         width: 200px;
     }
+
+    @media(max-width:750px){
+        h3{
+            font-size: 16px;
+        }
+        overflow: hidden;
+        .info{
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           max-width: fit-content;
+           font-size: 15px;
+           margin: auto;
+        }
+    }
 }

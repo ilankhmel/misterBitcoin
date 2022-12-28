@@ -16,6 +16,7 @@ class _SignupPage extends Component {
     }
 
     onSignUp = () => {
+        if(!this.state.username) return
         this.props.signup(this.state.username)
         this.props.history.push('/')
     }

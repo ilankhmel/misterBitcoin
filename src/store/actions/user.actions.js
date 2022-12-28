@@ -13,3 +13,10 @@ export function signup(username){
         dispatch({type:'LOG_IN', user})
     }
 }
+
+export function logout(){
+    return async (dispatch) => {
+        userService.logout()
+        dispatch({type:'LOG_OUT'})
+    }
+}

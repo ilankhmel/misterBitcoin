@@ -34,4 +34,13 @@
             }
         }
     }
+
+    @media(max-width:750px){
+        section{
+            justify-content: center;
+        }
+        h1{
+            display: none;
+        }
+    }
 }
