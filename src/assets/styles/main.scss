@@ -1,0 +1,53 @@
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
+
+// Basics
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+@import "basics/links";
+@import "basics/forms";
+
+
+
+
+// Components
+@import "cmps/app-header";
+@import "cmps/home-page";
+@import "cmps/user-msg";
+@import "cmps/review-list";
+@import "cmps/contact-list";
+@import "cmps/contact-preview";
+@import "cmps/contact-filter";
+@import "cmps/contact-details";
+@import "cmps/contact-edit";
+@import "cmps/transfer-section";
+@import "cmps/statistics-page";
+@import "cmps/moves-list";
+@import "cmps/signup-page";
+
+
+
+
+.main-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .app-header {
+        background-color: #7ba5ea;
+        color: white;
+    }
+
+    main {
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    > footer {
+        background-color: #111;
+        color: white;
+    }
+}

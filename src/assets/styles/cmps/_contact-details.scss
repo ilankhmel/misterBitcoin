@@ -1,0 +1,22 @@
+.contact-details{
+    text-align: center;
+    margin-top: 20px;
+    .info{
+        display: flex;
+        justify-content: center;
+        align-items:flex-end;
+        text-align: start;
+        margin-bottom: 20px;
+    }
+    .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        gap: 10px;
+        align-items: stretch
+    }
+    img{
+        width: 200px;
+    }
+}

@@ -1,0 +1,8 @@
+.statistics{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .chart-section{
+        height: max-content;
+    }
+}

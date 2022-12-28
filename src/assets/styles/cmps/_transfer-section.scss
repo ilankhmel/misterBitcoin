@@ -1,0 +1,22 @@
+.transfer-section{
+    background-color: rgb(144, 205, 246);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: start;
+    margin: auto;
+    width: 70%;
+    .transfer-form{
+        display: flex;
+        gap: 10px;
+        label{
+            width: fit-content;
+        }
+        button{
+            width: fit-content;
+        }
+        input{
+            border: 0;
+            border-radius: 20px;
+        }
+    }
+}
