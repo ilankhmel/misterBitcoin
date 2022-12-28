@@ -16,7 +16,7 @@ function App() {
       <div className="main-app ">
           <AppHeader/>
 
-          <main className='main-container'>
+          <main className='main-container'> 
             <Switch>
               <Route path="/contact/edit/:id?" component={ContactEdit}/>
               <Route path="/contact/:id" component={ContactDetails}/>
@@ -24,7 +24,7 @@ function App() {
               <Route path="/statistic" component={StatisticPage}/>
               <Route path="/signup" component={SignupPage}/>
               <Route path="/" component={HomePage}/>
-              {/* <Route path="/" {!loggedIn ? <Redirect to="/signup" /> : <HomePage />} /> */}
+              {/* Route path="/" {!loggedIn ? <Redirect to="/signup" /> : <HomePage />} /> */}
             </Switch>
           </main>
 
