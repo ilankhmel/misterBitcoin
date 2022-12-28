@@ -35,8 +35,8 @@ export class ContactEdit extends Component {
     onAddContact = async (ev) => {
         ev.preventDefault()
         try{
-            await contactService.saveContact({...this.state.contact})
-            this.props.history.push(`/contact/${this.state.contact._id}`)
+            const contact = await contactService.saveContact({...this.state.contact})
+            this.props.history.push(`/contact/${this.state.contact._id ? this.state.contact._id : contact._id}`)
         }catch(err){
             console.log(err);
         }
